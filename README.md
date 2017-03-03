@@ -56,15 +56,10 @@ Then the output `objpoints` and `imgpoints` are used to compute the camera calib
 To find the corresponding codes for the described tasks above, you can search: 
 
 * "read in the provided chessboards. output image points and object points"
-
 * "perform the chessboard function. get object points and image points"
-
 * "interactively navigate all chessboard images"
-
 * "output the visualization all chessbard images with corners drawn"
-
 * "calibriate camera using objpoints and imgpoints. output transision matrix"
-
 * "visualize all distorted chessboards "
 
 in "Advaned_Lane_Detection.ipynb".
@@ -77,13 +72,10 @@ in "Advaned_Lane_Detection.ipynb".
 ####1. Distortion
 
 I applied the distortion coefficients calculated from chessboard images to the test images. And the distorted test images look like this:
-
 ![alt text][distortedimages]
-
 To find the corresponding codes for the described tasks above, you can search: 
 
 * "define image distortion function"
-
 * "visualize all distorted test images"
 
 in "Advaned_Lane_Detection.ipynb".
