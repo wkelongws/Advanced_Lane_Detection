@@ -160,7 +160,7 @@ I used the codes provided by Udacity in the class to form two functions: one per
 
 This example shows the two different methods side by side, on the left is the sliding window method and on the right is the existing poly line method:
 
-[alt text][straight_lane_for_real_distance]
+![alt text][straight_lane_for_real_distance]
 
 I also calculate the ratio of pixel to real distance from the above image. 
 
@@ -181,7 +181,7 @@ A curvature calculation function takes in these ratios and the fitted poly line 
 
 Up to here we have finished the frame-wise process. This image below recap the entire process:
 
-[alt text][test_images_lane_found]
+![alt text][test_images_lane_found]
 
 The first row shows the raw test images. The second row shows the warped binary image after applying thresholding and warping on the raw test images. I manually draw an "attention area" whose bounaries are shown by the dashed white lines. Everything outside the "attention area" will be erased out as shown in the third row. The forth row shows the histogram from the third row. The histograms are used to find the starting point of the lane. The last two rows show the detected lanes using sliding window and existing poly respectively. The calcualted curvature for the detected lane are marked on top of each image.
 
@@ -203,7 +203,7 @@ For processing the project video, I carefully defined the Lane() class. Lane() w
 
 This image demonstrates how the output video looks:
 
-[alt text][screen_output]
+![alt text][screen_output]
 
 To find the corresponding codes for the described tasks above, you can search: 
 
