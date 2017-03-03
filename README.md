@@ -46,13 +46,9 @@ The goals / steps of this project are the following:
 ####1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
 I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, `objp` is just a replicated array of coordinates, and `objpoints` will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  `imgpoints` are the corners points detected from the provided chessboard images. The detected points are shown below:
-
 ![alt text][chessboardcorners]
-
 Then the output `objpoints` and `imgpoints` are used to compute the camera calibration and distortion coefficients using the `cv2.calibrateCamera()` function. I applied this distortion correction to the chessboard images using the `cv2.undistort()` function and obtained this result: 
-
 ![alt text][distortedchessboards]
-
 To find the corresponding codes for the described tasks above, you can search: 
 
 * "read in the provided chessboards. output image points and object points"
@@ -87,25 +83,21 @@ I used a combinations of different thresholds. Besides the gradient filter, grad
 * example 1:
 
 The road in this image has constant pavement color. The filter can efficiently filter out the pavement.
-
 ![alt text][pavementfilter_3]
 
 * example 2:
 
 The road in this image has constant pavement color but it is a brighter one different from example 1. The filter can efficiently filter out the pavement adptively.
-
 ![alt text][pavementfilter_1]
 
 * example 3:
 
 The road in this image has inconsistant  pavement color. The sample patches covered both the colors so the filter can efficiently filter out the pavement adptively.
-
 ![alt text][pavementfilter_2]
 
 * example 4:
 
 The road in this image has inconsistant  pavement color. The sample patches did not cover both the colors so the filter only filtered out the pavement with the same color as in the sampled patches. This illustrated that the pavement filter can not be relied on solely but it can be a good supliments for the other filters.
-
 ![alt text][pavementfilter_4]
 
 I have a program to interactively play with the combined thresholding function and fine tune the hyper parameters, since markdown does not support the interactive window, you can find it in the codes.
@@ -113,11 +105,8 @@ I have a program to interactively play with the combined thresholding function a
 To find the corresponding codes for the described tasks above, you can search: 
 
 * "define binary thresholding filter based on pavement color"
-
 * "visualize pavement filter thresholding method for generate binary images"
-
 * "define a comprehensive thresholding function which combined grad filter, color filter, mag filter and pavement filter."
-
 * "interactively play around with the combined binary filter"
 
 in "Advaned_Lane_Detection.ipynb".
@@ -125,23 +114,18 @@ in "Advaned_Lane_Detection.ipynb".
 ####3. Warping
 
 For warping, I examined the two provided test images with straight lanes. I manually find found the lane frame of the original image and cast them to a rectangular box. This example shows the effect after applying the warping.
-
 ![alt text][straightlines2]
 
 Then combine the thresholding with warping we will have the binary warped image of the straight line image like this:
-
 ![alt text][straightlines2_binary]
 
 This image shows the effect after apply the thresholding and warping the all the test images:
-
 ![alt text][warpedtestimages]
 
 To find the corresponding codes for the described tasks above, you can search: 
 
 * "define basic functions for image warping"
-
 * "interactively play around with image warping and filtering"
-
 * "visualize combined effect of warping and thresholding on all test images"
 
 in "Advaned_Lane_Detection.ipynb".
@@ -151,7 +135,6 @@ in "Advaned_Lane_Detection.ipynb".
 I used the codes provided by Udacity in the class to form two functions: one performs line search by sliding window and the other performs line search using existing fitted poly line.
 
 This example shows the two different methods side by side, on the left is the sliding window method and on the right is the existing poly line method:
-
 ![alt text][straight_lane_for_real_distance]
 
 I also calculate the ratio of pixel to real distance from the above image. 
@@ -180,11 +163,8 @@ The first row shows the raw test images. The second row shows the warped binary 
 To find the corresponding codes for the described tasks above, you can search: 
 
 * "define all functions and classes for lane searching on warped binary images"
-
 * "visualize line searching on warped binary images from provided test images with straight lanes."
-
 * "define a function to calculate curvature from the fitted poly line"
-
 * "visualize the entire frame-wise process on test images."
 
 in "Advaned_Lane_Detection.ipynb".
@@ -194,15 +174,12 @@ in "Advaned_Lane_Detection.ipynb".
 For processing the project video, I carefully defined the Lane() class. Lane() will store detected lanes from up to 6 previous frames. A weighted average fit, giving higher weights to newer frames, will be used as the detection for the current frame. In order to easier find out what is going wrong in the lane finding process, I segmented the output screen to show the final detection as well as all the intermediate results.
 
 This image demonstrates how the output video looks:
-
 ![alt text][screen_output]
 
 To find the corresponding codes for the described tasks above, you can search: 
 
 * "define three main classes: Line(), RoadLine() and Lane() to handle video-wise processing"
-
 * "interactively play around with the Lane() class to check the snapshots from the final output video"
-
 * "define a function to handle video frame by frame and output result to a new video"
 
 in "Advaned_Lane_Detection.ipynb".
