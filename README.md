@@ -201,5 +201,5 @@ I have found the thresholding step is the most most critial step in the entire c
 
 After I appied another advanced thresholding method found online, the pipeline starts working on the two challenging videos.
 Here are the links:
-* [challenge video 1](https://www.youtube.com/watch?v=fh_xRhGJg_8)
-* [challenge video 2](https://www.youtube.com/watch?v=AKofejs7-h8)
+* [challenge video 1](https://www.youtube.com/watch?v=fh_xRhGJg_8) lane detection on highway with different pavement colors 
+* [challenge video 2](https://www.youtube.com/watch?v=AKofejs7-h8) lane detection on mountain road with shades and sharp turns 
