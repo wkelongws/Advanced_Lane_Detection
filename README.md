@@ -197,3 +197,9 @@ This project took me a fairly long time to finish. I have applied the current pi
 
 I have found the thresholding step is the most most critial step in the entire computer vision analysis. The quality of all the outputs highly depend on the quality of the thresholding. Shading, different pavement color, sunlight, vague lane marking and all other natual things can significantly affect the thresholding. I believe if I want to perfect the thresholding I could not rely on  just one filter or just one combination of different filters. The ultimate way would be go searhcing through the entire space of all possible combinations of all possible filters until we find a acceptable binary solution. Maybe even that is not enough, we need to also patch the image and filter it patch by patch. But this cannot be the best practial solution because it is very computing intensive and cannot be applied in real-time application. I need to find a better way in the future study. Other important hyper parameters include the box size or search margin in the line searching functions. Smaller margin will provide more accurate result but are also less robust. These parameter also affected by the thresholding. If the thresholding is perfect then it would be very easy to choose the following hyper parameters. After all, thresholding is the bottleneck.  
 
+### revised thresholding method
+
+After I appied another advanced thresholding method found online, the pipeline starts working on the two challenging videos.
+Here are the links:
+* [challenge video 1](https://www.youtube.com/watch?v=fh_xRhGJg_8)
+* [challenge video 2](https://www.youtube.com/watch?v=AKofejs7-h8)
