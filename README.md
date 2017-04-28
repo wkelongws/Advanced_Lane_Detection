@@ -1,6 +1,6 @@
-##Advance Lane Detection
+## Advance Lane Detection
 
-###In this project I detect lane through the center camera image in car using pure computer vision techniques 
+### In this project I detect lane through the center camera image in car using pure computer vision techniques 
 ---
 
 **Advanced Lane Finding Project**
@@ -39,11 +39,11 @@ The goals / steps of this project are the following:
 
 ---
 
-###All related codes can be found in "Advaned_Lane_Detection.ipynb". The correct directions to the codes can be found under each section below
+### All related codes can be found in "Advaned_Lane_Detection.ipynb". The correct directions to the codes can be found under each section below
 
-###Camera Calibration
+### Camera Calibration
 
-####1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
+#### 1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
 I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, `objp` is just a replicated array of coordinates, and `objpoints` will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  `imgpoints` are the corners points detected from the provided chessboard images. The detected points are shown below:
 ![alt text][chessboardcorners]
@@ -60,12 +60,12 @@ To find the corresponding codes for the described tasks above, you can search:
 
 in "Advaned_Lane_Detection.ipynb".
 
-###Pipeline
+### Pipeline
 
 ### the frame-wise process includes: distortion, thresholding, warping and lane finding
 ### Then video-wise process requires Lane() class the keep tracking the detected lane from each frame
 
-####1. Distortion
+#### 1. Distortion
 
 I applied the distortion coefficients calculated from chessboard images to the test images. And the distorted test images look like this:
 ![alt text][distortedimages]
@@ -76,7 +76,7 @@ To find the corresponding codes for the described tasks above, you can search:
 
 in "Advaned_Lane_Detection.ipynb".
 
-####2. Thresholding
+#### 2. Thresholding
 
 I used a combinations of different thresholds. Besides the gradient filter, gradient_magnitude filter, grandient_direction filter and color filter, I also use a pavement filter. The pavement filter are defined to clip out sample patches of road surface, calculate the histogram of the sample patches and filter the raw image histograms using the pavement histogram. The goal is to adaptively filter out the pavement. The effect of the pavement filter will be shown using 4 examples below:
 
@@ -111,7 +111,7 @@ To find the corresponding codes for the described tasks above, you can search:
 
 in "Advaned_Lane_Detection.ipynb".
 
-####3. Warping
+#### 3. Warping
 
 For warping, I examined the two provided test images with straight lanes. I manually find found the lane frame of the original image and cast them to a rectangular box. This example shows the effect after applying the warping.
 ![alt text][straightlines2]
@@ -130,7 +130,7 @@ To find the corresponding codes for the described tasks above, you can search:
 
 in "Advaned_Lane_Detection.ipynb".
 
-####4. Lane finding
+#### 4. Lane finding
 
 I used the codes provided by Udacity in the class to form two functions: one performs line search by sliding window and the other performs line search using existing fitted poly line.
 
@@ -169,7 +169,7 @@ To find the corresponding codes for the described tasks above, you can search:
 
 in "Advaned_Lane_Detection.ipynb".
 
-####Finally video-wise process
+#### Finally video-wise process
 
 For processing the project video, I carefully defined the Lane() class. Lane() will store detected lanes from up to 6 previous frames. A weighted average fit, giving higher weights to newer frames, will be used as the detection for the current frame. In order to easier find out what is going wrong in the lane finding process, I segmented the output screen to show the final detection as well as all the intermediate results.
 
@@ -185,13 +185,13 @@ To find the corresponding codes for the described tasks above, you can search:
 in "Advaned_Lane_Detection.ipynb".
 
 
-###Final project video
+### Final project video
 
 Here's a [link to my video result](https://youtu.be/wXoWPThs0CQ)
 
 ---
 
-###Discussion
+### Discussion
 
 This project took me a fairly long time to finish. I have applied the current pipeline on the challange videos but it doesn't work well. Thanks to the output screen I designed I can clearly see which part went wrong.
 
