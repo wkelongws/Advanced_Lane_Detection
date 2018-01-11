@@ -1,4 +1,4 @@
-## Advance Lane Detection
+## Advanced Lane Detection
 
 ### In this project I detect lane through the center camera image in car using pure computer vision techniques 
 ---
